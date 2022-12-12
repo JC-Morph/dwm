@@ -52,6 +52,7 @@ static const Rule rules[] = {
 	/* class   	 instance       title	        tags mask     isfloating   isterminal noswallow monitor */
 	{ NULL,      	 NULL,          "Event Tester", 0,            0,           0,         1,        -1 },
 	{ NULL,      	 "fontpreview", NULL,           0,            0,           0,         1,        -1 },
+	{ "ffplay", 	 NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "Gimp",    	 NULL,          NULL,           1 << 8,       0,           0,         0,        -1 },
 	{ "Improviz", 	 NULL,          NULL,           0,            0,           0,         1,        -1 },
 	{ "mgba", 	 NULL,          NULL,           0,            1,           0,         0,        -1 },
