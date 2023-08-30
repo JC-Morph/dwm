@@ -54,9 +54,13 @@ static const Rule rules[] = {
 	{ NULL,      	 "fontpreview", NULL,           0,            0,           0,         1,        -1 },
 	{ "ffplay", 	 NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "Gimp",    	 NULL,          NULL,           1 << 8,       0,           0,         0,        -1 },
+	{ "gnuplot_qt"	,NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "Improviz", 	 NULL,          NULL,           0,            0,           0,         1,        -1 },
+	{ "Image Lounge",NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "mgba", 	 NULL,          NULL,           0,            1,           0,         0,        -1 },
+	{ "mojosetup",	 NULL,          NULL,           0,            1,           0,         1,        -1 },
 	{ "mpv", 	 NULL,          NULL,           0,            1,           0,         0,        -1 },
+	{ "Pavucontrol", NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "pinentry-qt", NULL,          NULL,           0,            1,           0,         1,        -1 },
 	{ "Pqiv",    	 NULL,          NULL,           0,            1,           0,         0,        -1 },
 	{ "projectMSDL", NULL,          NULL,           0,            0,           0,         1,        -1 },
@@ -269,7 +273,6 @@ static const Key keys[] = {
 	{ MODKEY,			XK_Delete,     spawn,                  {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	{ MODKEY,			XK_Scroll_Lock, spawn,                 SHCMD("killall screenkey || screenkey &") },
 
-<<<<<<< HEAD
 	{ 0, XF86XK_AudioMute,                         spawn,                  SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,                  spawn,                  SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioLowerVolume,                  spawn,                  SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },
