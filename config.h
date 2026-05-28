@@ -202,6 +202,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_backslash,  view,                   {0} },
 	/* { MODKEY|ShiftMask,		XK_backslash,  spawn,                  SHCMD("") }, */
 
+	{ MODKEY,			XK_a,	       spawn,		       {.v = (const char*[]){ "dmenurecord", "audio", NULL } } },
+	{ MODKEY,			XK_s,	       spawn,		       {.v = (const char*[]){ "dmenurecord", "kill", NULL } } },
 	{ MODKEY|ShiftMask,		XK_s,          togglesticky,           {0} },
 	/* { MODKEY|ShiftMask,		XK_s,          spawn,                  SHCMD("") }, */
 	{ MODKEY,			XK_d,          spawn,                  {.v = (const char*[]){ "dmenu_run", NULL } } },
