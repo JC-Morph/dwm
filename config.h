@@ -16,7 +16,7 @@ static int swallowfloating    = 0;        /* 1 means swallow floating windows by
 static int smartgaps          = 1;        /* 1 means no outer gap when there is only one window */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
-static char *fonts[]          = { "Hermit:size=10", "NotoColorEmoji:pixelsize=12:antialias=true:autohint=true" };
+static char *fonts[]          = { "Hermit:size=11", "NotoColorEmoji:pixelsize=15:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -124,7 +124,7 @@ static const char *termcmd[]  = { TERMINAL, NULL };
  */
 ResourcePref resources[] = {
 		{ "color0",		STRING,	&normbordercolor },
-		{ "color8",		STRING,	&selbordercolor },
+		{ "color4",		STRING,	&selbordercolor },
 		{ "color0",		STRING,	&normbgcolor },
 		{ "color4",		STRING,	&normfgcolor },
 		{ "color0",		STRING,	&selfgcolor },
