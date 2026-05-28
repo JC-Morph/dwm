@@ -81,11 +81,11 @@ static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen win
 #include "vanitygaps.c"
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",	tile },	                /* Default: Master on left, slaves on right */
-	{ "TTT",	bstack },               /* Master on top, slaves on bottom */
+	{ "[@]",	spiral },		/* Default: Fibonacci spiral */
+	{ "[\\]",	dwindle },		/* Decreasing in size right and leftward */
 
-	{ "[@]",	spiral },               /* Fibonacci spiral */
-	{ "[\\]",	dwindle },              /* Decreasing in size right and leftward */
+	{ "[]=",	tile },			/* Master on left, slaves on right */
+	{ "TTT",	bstack },		/* Master on top, slaves on bottom */
 
 	{ "[D]",	deck },	                /* Master on left, slaves in monocle-like mode on right */
 	{ "[M]",	monocle },              /* All windows on top of eachother */
@@ -180,19 +180,17 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_w,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
 	{ MODKEY,			XK_e,	       spawn,		       {.v = (const char*[]){ TERMINAL, "-e", "thunderbird", NULL } } },
 	{ MODKEY|ShiftMask,		XK_e,          spawn,                  SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+	{ MODKEY,			XK_i,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "floorp", NULL } } },
 	{ MODKEY,			XK_y,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "youtube-tui", NULL } } },
 	{ MODKEY,			XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "btm", NULL } } },
-	{ MODKEY,			XK_t,          setlayout,              {.v = &layouts[0]} }, /* tile */
-	{ MODKEY|ShiftMask,		XK_t,          setlayout,              {.v = &layouts[1]} }, /* bstack */
-	{ MODKEY,			XK_y,          setlayout,              {.v = &layouts[2]} }, /* spiral */
-	{ MODKEY|ShiftMask,		XK_y,          setlayout,              {.v = &layouts[3]} }, /* dwindle */
-	{ MODKEY,			XK_u,          setlayout,              {.v = &layouts[4]} }, /* deck */
-	{ MODKEY|ShiftMask,		XK_u,          setlayout,              {.v = &layouts[5]} }, /* monocle */
-	{ MODKEY,			XK_i,          setlayout,              {.v = &layouts[6]} }, /* centeredmaster */
-	{ MODKEY|ShiftMask,		XK_i,          setlayout,              {.v = &layouts[7]} }, /* centeredfloatingmaster */
-	{ MODKEY,			XK_o,          incnmaster,             {.i = +1 } },
-	{ MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } },
+	{ MODKEY|ShiftMask,		XK_t,          setlayout,              {.v = &layouts[4]} }, /* deck */
+	{ MODKEY|ShiftMask,		XK_y,          setlayout,              {.v = &layouts[0]} }, /* spiral */
+	{ MODKEY|ShiftMask,		XK_u,          setlayout,              {.v = &layouts[1]} }, /* dwindle */
+	{ MODKEY|ShiftMask,		XK_i,          setlayout,              {.v = &layouts[6]} }, /* centeredmaster */
+	{ MODKEY|ShiftMask,		XK_o,          setlayout,              {.v = &layouts[5]} }, /* monocle */
+	/* { MODKEY,			XK_o,          incnmaster,             {.i = +1 } }, */
+	/* { MODKEY|ShiftMask,		XK_o,          incnmaster,             {.i = -1 } }, */
 	{ MODKEY,			XK_p,          spawn,                  {.v = (const char*[]){ "mpc", "toggle", NULL } } },
 	{ MODKEY|ShiftMask,		XK_p,          spawn,                  SHCMD("mpc pause; pauseallmpv") },
 	{ MODKEY,			XK_bracketleft, spawn,                 {.v = (const char*[]){ "mpc", "seek", "-10", NULL } } },
