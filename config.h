@@ -3,7 +3,7 @@
 /* Constants */
 #define TERMINAL "st"
 #define TERMCLASS "St"
-#define BROWSER "librewolf"
+#define BROWSER "zen-browser"
 
 /* appearance */
 static unsigned int borderpx  = 2;        /* border pixel of windows */
@@ -178,8 +178,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_q,          spawn,                  {.v = (const char*[]){ "sysact", NULL } } },
 	{ MODKEY,			XK_w,          spawn,                  {.v = (const char*[]){ BROWSER, NULL } } },
 	{ MODKEY|ShiftMask,		XK_w,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "nmtui", NULL } } },
-	{ MODKEY,			XK_e,          spawn,                  SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks; rmdir ~/.abook 2>/dev/null") },
+	{ MODKEY,			XK_e,	       spawn,		       {.v = (const char*[]){ TERMINAL, "-e", "thunderbird", NULL } } },
 	{ MODKEY|ShiftMask,		XK_e,          spawn,                  SHCMD(TERMINAL " -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook") },
+	{ MODKEY,			XK_y,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "youtube-tui", NULL } } },
 	{ MODKEY,			XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "lfub", NULL } } },
 	{ MODKEY|ShiftMask,		XK_r,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "btm", NULL } } },
 	{ MODKEY,			XK_t,          setlayout,              {.v = &layouts[0]} }, /* tile */
@@ -256,9 +257,8 @@ static const Key keys[] = {
 	{ MODKEY,			XK_F3,         spawn,                  {.v = (const char*[]){ "displayselect", NULL } } },
 	{ MODKEY,			XK_F4,         spawn,                  SHCMD(TERMINAL " -e pulsemixer; kill -44 $(pidof dwmblocks)") },
 	{ MODKEY,			XK_F5,         xrdb,                   {.v = NULL } },
-	{ MODKEY,			XK_F6,         spawn,                  {.v = (const char*[]){ "torwrap", NULL } } },
-	{ MODKEY,			XK_F7,         spawn,                  {.v = (const char*[]){ "td-toggle", NULL } } },
-	{ MODKEY,			XK_F8,         spawn,                  {.v = (const char*[]){ "mailsync", NULL } } },
+	{ MODKEY,			XK_F7,         spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "nicotine", NULL } } },
+	{ MODKEY,			XK_F8,         spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "deluge", NULL } } },
 	{ MODKEY,			XK_F9,         spawn,                  {.v = (const char*[]){ "mounter", NULL } } },
 	{ MODKEY,			XK_F10,        spawn,                  {.v = (const char*[]){ "unmounter", NULL } } },
 	{ MODKEY,			XK_F11,        spawn,                  SHCMD("mpv --untimed --no-cache --no-osc --no-input-default-bindings --profile=low-latency --input-conf=/dev/null --title=webcam $(ls /dev/video[0,2,4,6,8] | tail -n 1)") },
@@ -292,7 +292,7 @@ static const Key keys[] = {
 	{ 0, XF86XK_DOS,                               spawn,                  {.v = termcmd } },
 	{ 0, XF86XK_ScreenSaver,                       spawn,                  SHCMD("slock & xset dpms force off; mpc pause; pauseallmpv") },
 	{ 0, XF86XK_TaskPane,                          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "btm", NULL } } },
-	{ 0, XF86XK_Mail,                              spawn,                  SHCMD(TERMINAL " -e neomutt ; pkill -RTMIN+12 dwmblocks") },
+	{ 0, XF86XK_Mail,			       spawn,		       {.v = (const char*[]){ TERMINAL, "-e",  "thunderbird", NULL } } },
 	{ 0, XF86XK_MyComputer,                        spawn,                  {.v = (const char*[]){ TERMINAL, "-e",  "lfub",  "/", NULL } } },
 	/* { 0, XF86XK_Battery,                        spawn,                  SHCMD("") }, */
 	{ 0, XF86XK_Launch1,                           spawn,                  {.v = (const char*[]){ "xset", "dpms", "force", "off", NULL } } },
