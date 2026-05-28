@@ -202,9 +202,7 @@ static const Key keys[] = {
 	{ MODKEY,			XK_backslash,  view,                   {0} },
 	/* { MODKEY|ShiftMask,		XK_backslash,  spawn,                  SHCMD("") }, */
 
-	{ MODKEY,			XK_a,          togglegaps,             {0} },
-	{ MODKEY|ShiftMask,		XK_a,          defaultgaps,            {0} },
-	{ MODKEY,			XK_s,          togglesticky,           {0} },
+	{ MODKEY|ShiftMask,		XK_s,          togglesticky,           {0} },
 	/* { MODKEY|ShiftMask,		XK_s,          spawn,                  SHCMD("") }, */
 	{ MODKEY,			XK_d,          spawn,                  {.v = (const char*[]){ "dmenu_run", NULL } } },
 	{ MODKEY|ShiftMask,		XK_d,          spawn,                  {.v = (const char*[]){ "passmenu", NULL } } },
@@ -224,8 +222,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,		XK_Return,     togglescratch,          {.ui = 0} },
 
 	{ MODKEY,			XK_z,          incrgaps,               {.i = +3 } },
+	{ MODKEY|ShiftMask,		XK_z,	       defaultgaps,	       {0} },
 	/* { MODKEY|ShiftMask,		XK_z,          spawn,                  SHCMD("") }, */
 	{ MODKEY,			XK_x,          incrgaps,               {.i = -3 } },
+	{ MODKEY|ShiftMask,		XK_x,	       togglegaps,	       {0} },
 	/* { MODKEY|ShiftMask,		XK_x,          spawn,                  SHCMD("") }, */
 	{ MODKEY,			XK_c,          spawn,                  {.v = (const char*[]){ TERMINAL, "-e", "profanity", NULL } } },
 	/* { MODKEY|ShiftMask,		XK_c,          spawn,                  SHCMD("") }, */
